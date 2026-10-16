@@ -1,0 +1,3578 @@
+{
+  "metadata": {
+    "queries_sha256": "eb03fc37d908427ab5bbd40b094cea36e5c2d3cb5721e13fcb59630abbcd29a7",
+    "indexed_chunks_sha256": "1a562e12555fdb0cc6d40a4dbc8b2f96d7c4a57f015a8dd5167b045c7f5db445",
+    "indexed_chunks": 12,
+    "answerable_queries": 24,
+    "negative_queries": 4,
+    "top_k": 3,
+    "candidate_k": 8,
+    "semantic_weight": 0.5,
+    "rrf_k": 60,
+    "rerank_threshold": null,
+    "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "reranker": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "python": "3.14.0",
+    "platform": "macOS-15.6-arm64-arm-64bit-Mach-O",
+    "packages": {
+      "numpy": "2.5.1",
+      "qdrant-client": "1.19.1",
+      "sentence-transformers": "5.6.1",
+      "torch": "2.13.0"
+    },
+    "generation_evaluated": false,
+    "latency_note": "Warm models; sequential local measurements, no LLM. Reranked timings include the respective branch cost. Negatives excluded from ranking metrics."
+  },
+  "summary": [
+    {
+      "method": "bm25",
+      "language": "all",
+      "queries": 24,
+      "hit_at_k": 0.5417,
+      "mrr_at_k": 0.5208,
+      "median_latency_ms": 0.071
+    },
+    {
+      "method": "bm25",
+      "language": "ar",
+      "queries": 12,
+      "hit_at_k": 0.0833,
+      "mrr_at_k": 0.0833,
+      "median_latency_ms": 0.038
+    },
+    {
+      "method": "bm25",
+      "language": "fr",
+      "queries": 12,
+      "hit_at_k": 1.0,
+      "mrr_at_k": 0.9583,
+      "median_latency_ms": 0.089
+    },
+    {
+      "method": "bm25_reranked",
+      "language": "all",
+      "queries": 24,
+      "hit_at_k": 0.5417,
+      "mrr_at_k": 0.5417,
+      "median_latency_ms": 25.822
+    },
+    {
+      "method": "bm25_reranked",
+      "language": "ar",
+      "queries": 12,
+      "hit_at_k": 0.0833,
+      "mrr_at_k": 0.0833,
+      "median_latency_ms": 0.041
+    },
+    {
+      "method": "bm25_reranked",
+      "language": "fr",
+      "queries": 12,
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0,
+      "median_latency_ms": 37.002
+    },
+    {
+      "method": "hybrid",
+      "language": "all",
+      "queries": 24,
+      "hit_at_k": 0.9583,
+      "mrr_at_k": 0.9097,
+      "median_latency_ms": 14.631
+    },
+    {
+      "method": "hybrid",
+      "language": "ar",
+      "queries": 12,
+      "hit_at_k": 0.9167,
+      "mrr_at_k": 0.8194,
+      "median_latency_ms": 19.559
+    },
+    {
+      "method": "hybrid",
+      "language": "fr",
+      "queries": 12,
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0,
+      "median_latency_ms": 14.629
+    },
+    {
+      "method": "hybrid_reranked",
+      "language": "all",
+      "queries": 24,
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0,
+      "median_latency_ms": 56.628
+    },
+    {
+      "method": "hybrid_reranked",
+      "language": "ar",
+      "queries": 12,
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0,
+      "median_latency_ms": 58.189
+    },
+    {
+      "method": "hybrid_reranked",
+      "language": "fr",
+      "queries": 12,
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0,
+      "median_latency_ms": 55.576
+    },
+    {
+      "method": "semantic",
+      "language": "all",
+      "queries": 24,
+      "hit_at_k": 0.9583,
+      "mrr_at_k": 0.8889,
+      "median_latency_ms": 14.526
+    },
+    {
+      "method": "semantic",
+      "language": "ar",
+      "queries": 12,
+      "hit_at_k": 0.9167,
+      "mrr_at_k": 0.8194,
+      "median_latency_ms": 19.481
+    },
+    {
+      "method": "semantic",
+      "language": "fr",
+      "queries": 12,
+      "hit_at_k": 1.0,
+      "mrr_at_k": 0.9583,
+      "median_latency_ms": 14.497
+    },
+    {
+      "method": "semantic_reranked",
+      "language": "all",
+      "queries": 24,
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0,
+      "median_latency_ms": 59.275
+    },
+    {
+      "method": "semantic_reranked",
+      "language": "ar",
+      "queries": 12,
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0,
+      "median_latency_ms": 63.781
+    },
+    {
+      "method": "semantic_reranked",
+      "language": "fr",
+      "queries": 12,
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0,
+      "median_latency_ms": 55.18
+    }
+  ],
+  "records": [
+    {
+      "id": "archives_1_fr",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 35.42,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_1_fr",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 123.072,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_1_fr",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.216,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_1_fr",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 28.467,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_1_fr",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 35.691,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_1_fr",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 70.776,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_1_ar",
+      "language": "ar",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 28.439,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "archives_1_ar",
+      "language": "ar",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 80.848,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_1_ar",
+      "language": "ar",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.041,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "archives_1_ar",
+      "language": "ar",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 0.044,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "archives_1_ar",
+      "language": "ar",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 28.524,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "archives_1_ar",
+      "language": "ar",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 62.91,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_2_fr",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 28.389,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_2_fr",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 86.098,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_2_fr",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.112,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_2_fr",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 56.451,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_2_fr",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 28.556,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_2_fr",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 80.277,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_2_ar",
+      "language": "ar",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 13.458,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_2_ar",
+      "language": "ar",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 47.211,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_2_ar",
+      "language": "ar",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.035,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "archives_2_ar",
+      "language": "ar",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 0.037,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "archives_2_ar",
+      "language": "ar",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 13.534,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "archives_2_ar",
+      "language": "ar",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 49.672,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_1_fr",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 13.287,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 0.5
+    },
+    {
+      "id": "acces_1_fr",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 67.797,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_1_fr",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.094,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_1_fr",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 29.943,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_1_fr",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 13.436,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_1_fr",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 57.314,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_1_ar",
+      "language": "ar",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 29.016,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_1_ar",
+      "language": "ar",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 68.08,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_1_ar",
+      "language": "ar",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.04,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "acces_1_ar",
+      "language": "ar",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 0.042,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "acces_1_ar",
+      "language": "ar",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 29.099,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_1_ar",
+      "language": "ar",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 67.601,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_2_fr",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 32.131,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_2_fr",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 71.064,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_2_fr",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.082,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 0.5
+    },
+    {
+      "id": "acces_2_fr",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 78.001,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_2_fr",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 32.262,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_2_fr",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 67.598,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_2_ar",
+      "language": "ar",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 28.033,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_2_ar",
+      "language": "ar",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 76.215,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_2_ar",
+      "language": "ar",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.041,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "acces_2_ar",
+      "language": "ar",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 0.043,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "acces_2_ar",
+      "language": "ar",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 28.116,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "acces_2_ar",
+      "language": "ar",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 62.726,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_1_fr",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 14.143,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_1_fr",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 48.477,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_1_fr",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.085,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_1_fr",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 31.719,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_1_fr",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 14.277,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_1_fr",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 48.855,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_1_ar",
+      "language": "ar",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 13.105,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_1_ar",
+      "language": "ar",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 47.791,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_1_ar",
+      "language": "ar",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.038,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "incidents_1_ar",
+      "language": "ar",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 0.04,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "incidents_1_ar",
+      "language": "ar",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 13.184,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_1_ar",
+      "language": "ar",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 52.812,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_2_fr",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 27.728,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_2_fr",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 87.313,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_2_fr",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.134,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_2_fr",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 202.004,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_2_fr",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 27.932,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_2_fr",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 67.326,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_2_ar",
+      "language": "ar",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 13.496,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_2_ar",
+      "language": "ar",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 49.132,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_2_ar",
+      "language": "ar",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.07,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_2_ar",
+      "language": "ar",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 25.316,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_2_ar",
+      "language": "ar",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 13.608,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "incidents_2_ar",
+      "language": "ar",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 47.682,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_1_fr",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 13.938,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_1_fr",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 49.32,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_1_fr",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.082,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_1_fr",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 37.332,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_1_fr",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 14.068,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_1_fr",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 50.091,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_1_ar",
+      "language": "ar",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 12.931,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_1_ar",
+      "language": "ar",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 48.872,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_1_ar",
+      "language": "ar",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.036,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "api_1_ar",
+      "language": "ar",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 0.038,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "api_1_ar",
+      "language": "ar",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 13.009,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_1_ar",
+      "language": "ar",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 49.8,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_2_fr",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 24.391,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_2_fr",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 59.068,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_2_fr",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.108,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_2_fr",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 26.328,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_2_fr",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 24.556,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_2_fr",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 60.796,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_2_ar",
+      "language": "ar",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 24.761,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_2_ar",
+      "language": "ar",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 237.289,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_2_ar",
+      "language": "ar",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.035,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "api_2_ar",
+      "language": "ar",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 0.038,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "api_2_ar",
+      "language": "ar",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 24.838,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "api_2_ar",
+      "language": "ar",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 61.234,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_1_fr",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 14.85,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_1_fr",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 49.015,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_1_fr",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.081,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_1_fr",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 36.315,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_1_fr",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 14.981,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_1_fr",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 49.592,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_1_ar",
+      "language": "ar",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 25.461,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 0.3333333333333333
+    },
+    {
+      "id": "formation_1_ar",
+      "language": "ar",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 74.818,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_1_ar",
+      "language": "ar",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.039,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "formation_1_ar",
+      "language": "ar",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 0.042,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "formation_1_ar",
+      "language": "ar",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 25.542,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 0.3333333333333333
+    },
+    {
+      "id": "formation_1_ar",
+      "language": "ar",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 60.61,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_2_fr",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 13.409,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_2_fr",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 49.479,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_2_fr",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.081,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_2_fr",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 36.672,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_2_fr",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 13.541,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_2_fr",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 48.231,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_2_ar",
+      "language": "ar",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 24.855,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_2_ar",
+      "language": "ar",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 59.483,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_2_ar",
+      "language": "ar",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.039,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "formation_2_ar",
+      "language": "ar",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 0.042,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "formation_2_ar",
+      "language": "ar",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 24.938,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "formation_2_ar",
+      "language": "ar",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 60.437,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_1_fr",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 13.468,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_1_fr",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 51.293,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_1_fr",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.071,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_1_fr",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 39.932,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_1_fr",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 13.584,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_1_fr",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 49.395,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_1_ar",
+      "language": "ar",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 13.811,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 0.5
+    },
+    {
+      "id": "sauvegardes_1_ar",
+      "language": "ar",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 48.909,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_1_ar",
+      "language": "ar",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.035,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "sauvegardes_1_ar",
+      "language": "ar",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 0.037,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "sauvegardes_1_ar",
+      "language": "ar",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 13.888,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 0.5
+    },
+    {
+      "id": "sauvegardes_1_ar",
+      "language": "ar",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 49.68,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_2_fr",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 13.5,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_2_fr",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 50.133,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_2_fr",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.105,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_2_fr",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 52.856,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_2_fr",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 13.668,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_2_fr",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 53.839,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_2_ar",
+      "language": "ar",
+      "method": "semantic",
+      "answerable": true,
+      "latency_ms": 14.201,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_2_ar",
+      "language": "ar",
+      "method": "semantic_reranked",
+      "answerable": true,
+      "latency_ms": 68.687,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_2_ar",
+      "language": "ar",
+      "method": "bm25",
+      "answerable": true,
+      "latency_ms": 0.038,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "sauvegardes_2_ar",
+      "language": "ar",
+      "method": "bm25_reranked",
+      "answerable": true,
+      "latency_ms": 0.04,
+      "retrieved_pages": [],
+      "hit_at_k": 0.0,
+      "mrr_at_k": 0.0
+    },
+    {
+      "id": "sauvegardes_2_ar",
+      "language": "ar",
+      "method": "hybrid",
+      "answerable": true,
+      "latency_ms": 14.281,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "sauvegardes_2_ar",
+      "language": "ar",
+      "method": "hybrid_reranked",
+      "answerable": true,
+      "latency_ms": 55.942,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 2
+        }
+      ],
+      "hit_at_k": 1.0,
+      "mrr_at_k": 1.0
+    },
+    {
+      "id": "out_of_scope_1",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": false,
+      "latency_ms": 14.745,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_1",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": false,
+      "latency_ms": 56.017,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_1",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": false,
+      "latency_ms": 0.043,
+      "retrieved_pages": []
+    },
+    {
+      "id": "out_of_scope_1",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": false,
+      "latency_ms": 0.045,
+      "retrieved_pages": []
+    },
+    {
+      "id": "out_of_scope_1",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": false,
+      "latency_ms": 14.832,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_1",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": false,
+      "latency_ms": 56.371,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_2",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": false,
+      "latency_ms": 13.078,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_2",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": false,
+      "latency_ms": 64.077,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_2",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": false,
+      "latency_ms": 0.033,
+      "retrieved_pages": []
+    },
+    {
+      "id": "out_of_scope_2",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": false,
+      "latency_ms": 0.035,
+      "retrieved_pages": []
+    },
+    {
+      "id": "out_of_scope_2",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": false,
+      "latency_ms": 13.154,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_2",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": false,
+      "latency_ms": 50.271,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_acces.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_3",
+      "language": "ar",
+      "method": "semantic",
+      "answerable": false,
+      "latency_ms": 24.011,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_3",
+      "language": "ar",
+      "method": "semantic_reranked",
+      "answerable": false,
+      "latency_ms": 61.044,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_3",
+      "language": "ar",
+      "method": "bm25",
+      "answerable": false,
+      "latency_ms": 0.035,
+      "retrieved_pages": []
+    },
+    {
+      "id": "out_of_scope_3",
+      "language": "ar",
+      "method": "bm25_reranked",
+      "answerable": false,
+      "latency_ms": 0.037,
+      "retrieved_pages": []
+    },
+    {
+      "id": "out_of_scope_3",
+      "language": "ar",
+      "method": "hybrid",
+      "answerable": false,
+      "latency_ms": 24.089,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_3",
+      "language": "ar",
+      "method": "hybrid_reranked",
+      "answerable": false,
+      "latency_ms": 61.561,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 1
+        },
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_4",
+      "language": "fr",
+      "method": "semantic",
+      "answerable": false,
+      "latency_ms": 14.132,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_4",
+      "language": "fr",
+      "method": "semantic_reranked",
+      "answerable": false,
+      "latency_ms": 52.785,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_4",
+      "language": "fr",
+      "method": "bm25",
+      "answerable": false,
+      "latency_ms": 0.059,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_4",
+      "language": "fr",
+      "method": "bm25_reranked",
+      "answerable": false,
+      "latency_ms": 33.095,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_4",
+      "language": "fr",
+      "method": "hybrid",
+      "answerable": false,
+      "latency_ms": 14.236,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_api.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_archives.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "out_of_scope_4",
+      "language": "fr",
+      "method": "hybrid_reranked",
+      "answerable": false,
+      "latency_ms": 53.628,
+      "retrieved_pages": [
+        {
+          "filename": "Atlas_sauvegardes.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_formation.pdf",
+          "page": 2
+        },
+        {
+          "filename": "Atlas_incidents.pdf",
+          "page": 2
+        }
+      ]
+    }
+  ]
+}

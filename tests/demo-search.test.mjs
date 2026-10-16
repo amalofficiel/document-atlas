@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { searchDemo } from '../frontend/src/demo.ts';
+const pages = JSON.parse(readFileSync(new URL('../evaluation/corpus.json',import.meta.url),'utf8'));
+assert.equal(searchDemo('Quelle est la limite de requêtes de l’API ?',pages)[0].filename,'Atlas_api.pdf');
+assert.equal(searchDemo('Combien de temps les dossiers sont-ils conservés ?',pages)[0].page,1);
+assert.deepEqual(searchDemo('xyzzyzzq',pages),[]);
+assert.deepEqual(searchDemo('ما هو سعر الذهب اليوم؟',pages),[]);
+assert.ok(searchDemo('archives',pages,1).length <= 1);
+console.log('Browser search: 5 checks passed.');

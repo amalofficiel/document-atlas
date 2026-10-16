@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+pypdf
+sentence-transformers
+numpy
+qdrant-client
+networkx
+langchain-groq
+langchain-core
+python-dotenv
+langdetect

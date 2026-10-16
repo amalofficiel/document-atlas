@@ -1,0 +1,246 @@
+[
+  {
+    "id": "archives_1_fr",
+    "query": "Combien de temps les dossiers sont-ils conservés ?",
+    "expected_source": "Atlas_archives.pdf",
+    "expected_page": 1,
+    "language": "fr",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "archives_1_ar",
+    "query": "كم تبلغ مدة الاحتفاظ بالملفات؟",
+    "expected_source": "Atlas_archives.pdf",
+    "expected_page": 1,
+    "language": "ar",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "archives_2_fr",
+    "query": "Sous quel délai reçoit-on un export des archives ?",
+    "expected_source": "Atlas_archives.pdf",
+    "expected_page": 2,
+    "language": "fr",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "archives_2_ar",
+    "query": "ما هي مهلة تسليم نسخة من الأرشيف؟",
+    "expected_source": "Atlas_archives.pdf",
+    "expected_page": 2,
+    "language": "ar",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "acces_1_fr",
+    "query": "Qui doit activer l’authentification à deux facteurs ?",
+    "expected_source": "Atlas_acces.pdf",
+    "expected_page": 1,
+    "language": "fr",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "acces_1_ar",
+    "query": "من يجب عليه تفعيل المصادقة الثنائية؟",
+    "expected_source": "Atlas_acces.pdf",
+    "expected_page": 1,
+    "language": "ar",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "acces_2_fr",
+    "query": "Que devient le compte quand un membre quitte l’équipe ?",
+    "expected_source": "Atlas_acces.pdf",
+    "expected_page": 2,
+    "language": "fr",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "acces_2_ar",
+    "query": "ماذا يحدث للحساب عند مغادرة عضو للفريق؟",
+    "expected_source": "Atlas_acces.pdf",
+    "expected_page": 2,
+    "language": "ar",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "incidents_1_fr",
+    "query": "Quelles informations faut-il transmettre pour signaler une panne ?",
+    "expected_source": "Atlas_incidents.pdf",
+    "expected_page": 1,
+    "language": "fr",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "incidents_1_ar",
+    "query": "ما هي المعلومات المطلوبة للإبلاغ عن عطل؟",
+    "expected_source": "Atlas_incidents.pdf",
+    "expected_page": 1,
+    "language": "ar",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "incidents_2_fr",
+    "query": "À quelle fréquence le support donne-t-il des nouvelles pour un incident P1 ?",
+    "expected_source": "Atlas_incidents.pdf",
+    "expected_page": 2,
+    "language": "fr",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "incidents_2_ar",
+    "query": "كم مرة ينشر الدعم تحديثا عن حادث من الدرجة P1؟",
+    "expected_source": "Atlas_incidents.pdf",
+    "expected_page": 2,
+    "language": "ar",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "api_1_fr",
+    "query": "Quelle est la limite de requêtes de l’API ?",
+    "expected_source": "Atlas_api.pdf",
+    "expected_page": 1,
+    "language": "fr",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "api_1_ar",
+    "query": "ما هو الحد الأقصى لطلبات واجهة البرمجة؟",
+    "expected_source": "Atlas_api.pdf",
+    "expected_page": 1,
+    "language": "ar",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "api_2_fr",
+    "query": "Combien de temps un jeton d’accès reste-t-il valide ?",
+    "expected_source": "Atlas_api.pdf",
+    "expected_page": 2,
+    "language": "fr",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "api_2_ar",
+    "query": "ما هي مدة صلاحية رمز الوصول؟",
+    "expected_source": "Atlas_api.pdf",
+    "expected_page": 2,
+    "language": "ar",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "formation_1_fr",
+    "query": "Combien de participants une session peut-elle accueillir ?",
+    "expected_source": "Atlas_formation.pdf",
+    "expected_page": 1,
+    "language": "fr",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "formation_1_ar",
+    "query": "كم عدد المشاركين الأقصى في الدورة؟",
+    "expected_source": "Atlas_formation.pdf",
+    "expected_page": 1,
+    "language": "ar",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "formation_2_fr",
+    "query": "Quel score faut-il obtenir pour valider le parcours ?",
+    "expected_source": "Atlas_formation.pdf",
+    "expected_page": 2,
+    "language": "fr",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "formation_2_ar",
+    "query": "ما هي النتيجة المطلوبة للنجاح في البرنامج؟",
+    "expected_source": "Atlas_formation.pdf",
+    "expected_page": 2,
+    "language": "ar",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "sauvegardes_1_fr",
+    "query": "Quand la sauvegarde complète est-elle exécutée ?",
+    "expected_source": "Atlas_sauvegardes.pdf",
+    "expected_page": 1,
+    "language": "fr",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "sauvegardes_1_ar",
+    "query": "متى يتم إجراء النسخ الاحتياطي الكامل؟",
+    "expected_source": "Atlas_sauvegardes.pdf",
+    "expected_page": 1,
+    "language": "ar",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "sauvegardes_2_fr",
+    "query": "Quelle est la durée cible de reprise après restauration ?",
+    "expected_source": "Atlas_sauvegardes.pdf",
+    "expected_page": 2,
+    "language": "fr",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "sauvegardes_2_ar",
+    "query": "ما هي المدة المستهدفة لاستعادة الخدمة؟",
+    "expected_source": "Atlas_sauvegardes.pdf",
+    "expected_page": 2,
+    "language": "ar",
+    "relevant": true,
+    "expected_behavior": "answer"
+  },
+  {
+    "id": "out_of_scope_1",
+    "query": "Quel est le cours du bitcoin aujourd’hui ?",
+    "language": "fr",
+    "relevant": false,
+    "expected_behavior": "abstain"
+  },
+  {
+    "id": "out_of_scope_2",
+    "query": "Quelle est la capitale du Japon ?",
+    "language": "fr",
+    "relevant": false,
+    "expected_behavior": "abstain"
+  },
+  {
+    "id": "out_of_scope_3",
+    "query": "ما هو سعر الذهب اليوم؟",
+    "language": "ar",
+    "relevant": false,
+    "expected_behavior": "abstain"
+  },
+  {
+    "id": "out_of_scope_4",
+    "query": "Quel traitement faut-il prendre contre la grippe ?",
+    "language": "fr",
+    "relevant": false,
+    "expected_behavior": "abstain"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "filename": "Atlas_archives.pdf",
+    "page": 1,
+    "title": "Archivage documentaire",
+    "heading": "Conservation des dossiers",
+    "text": "Les dossiers de démonstration sont conservés pendant 18 mois. Chaque dossier porte un identifiant unique et une date de création. Le responsable documentaire vérifie les archives une fois par trimestre. Aucune donnée réelle de client ne doit être utilisée dans cet atelier."
+  },
+  {
+    "filename": "Atlas_archives.pdf",
+    "page": 2,
+    "title": "Archivage documentaire",
+    "heading": "Export des archives",
+    "text": "Un export des archives peut être demandé au responsable documentaire. Il est fourni au format JSON dans un délai fictif de 4 jours ouvrés. Les fichiers exportés sont chiffrés et le lien de téléchargement expire après 48 heures."
+  },
+  {
+    "filename": "Atlas_acces.pdf",
+    "page": 1,
+    "title": "Gestion des accès",
+    "heading": "Comptes et authentification",
+    "text": "Chaque membre dispose d’un compte personnel. L’authentification à deux facteurs est obligatoire pour les comptes administrateurs de l’atelier. Les comptes partagés sont interdits. Les droits sont accordés selon le rôle et réexaminés tous les 90 jours."
+  },
+  {
+    "filename": "Atlas_acces.pdf",
+    "page": 2,
+    "title": "Gestion des accès",
+    "heading": "Départ d’un membre",
+    "text": "Au départ d’un membre, le responsable désactive son compte dans un délai fictif de 2 heures après notification. Les jetons API associés sont révoqués. La liste des accès supprimés est conservée dans le journal de sécurité."
+  },
+  {
+    "filename": "Atlas_incidents.pdf",
+    "page": 1,
+    "title": "Gestion des incidents",
+    "heading": "Signalement d’une panne",
+    "text": "Une panne du portail doit être signalée au support avec l’heure du constat, le service touché et un message d’erreur. L’accusé de réception est envoyé sous 30 minutes pendant les heures de support. Aucun mot de passe ne doit être joint au ticket."
+  },
+  {
+    "filename": "Atlas_incidents.pdf",
+    "page": 2,
+    "title": "Gestion des incidents",
+    "heading": "Priorité et suivi",
+    "text": "Une indisponibilité totale est classée en priorité P1. Une gêne sans blocage est classée P3. Pour un incident P1, le support publie un point de situation toutes les 60 minutes. Après résolution, un compte rendu décrit la cause et les mesures correctives."
+  },
+  {
+    "filename": "Atlas_api.pdf",
+    "page": 1,
+    "title": "Utilisation de l’API",
+    "heading": "Limites de requêtes",
+    "text": "L’API fictive autorise 120 requêtes par minute et par jeton. Un dépassement renvoie le statut HTTP 429. Le client doit attendre le délai indiqué dans Retry-After avant une nouvelle tentative. Cette limite concerne uniquement la simulation."
+  },
+  {
+    "filename": "Atlas_api.pdf",
+    "page": 2,
+    "title": "Utilisation de l’API",
+    "heading": "Rotation des jetons",
+    "text": "Les jetons d’accès expirent après 30 jours dans cet exemple. Le remplacement est effectué depuis la console d’administration. L’ancien jeton reste valide pendant une période de transition de 15 minutes, puis il est révoqué."
+  },
+  {
+    "filename": "Atlas_formation.pdf",
+    "page": 1,
+    "title": "Organisation des formations",
+    "heading": "Inscription aux ateliers",
+    "text": "Une inscription à un atelier doit être déposée au moins 5 jours avant la session. Le formulaire contient le nom du module et le niveau souhaité. Une session accueille au maximum 12 participants pour permettre des exercices pratiques."
+  },
+  {
+    "filename": "Atlas_formation.pdf",
+    "page": 2,
+    "title": "Organisation des formations",
+    "heading": "Validation du parcours",
+    "text": "Pour valider le parcours fictif, le participant réalise un exercice pratique et obtient au moins 70 points sur 100. Une seconde tentative est possible dans les 14 jours. Une attestation de participation est délivrée après validation."
+  },
+  {
+    "filename": "Atlas_sauvegardes.pdf",
+    "page": 1,
+    "title": "Sauvegarde et restauration",
+    "heading": "Fréquence des sauvegardes",
+    "text": "Une sauvegarde complète est effectuée chaque dimanche à 02h00 dans cet environnement fictif. Des sauvegardes incrémentales sont réalisées chaque nuit. Les copies sont conservées pendant 21 jours sur un emplacement distinct du serveur principal."
+  },
+  {
+    "filename": "Atlas_sauvegardes.pdf",
+    "page": 2,
+    "title": "Sauvegarde et restauration",
+    "heading": "Test de restauration",
+    "text": "Une restauration de contrôle est réalisée chaque mois sur un environnement isolé. L’objectif fictif de reprise est de 6 heures. Le responsable vérifie l’intégrité des fichiers et consigne la durée réelle du test dans un rapport."
+  }
+]
