@@ -1,5 +1,6 @@
 """Rebuild the authored, fictional PDF corpus. Requires reportlab."""
 import json
+import shutil
 from collections import defaultdict
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -41,7 +42,11 @@ def main():
             canvas.drawString(54, 32, 'Document Atlas | Données fictives')
             canvas.drawRightString(A4[0]-54,32,f'Page {doc.page}')
         SimpleDocTemplate(str(out/filename),pagesize=A4,rightMargin=54,leftMargin=54,topMargin=54,bottomMargin=54,title=sections[0]['title'],author='Amal Hlaissie').build(story,onFirstPage=footer,onLaterPages=footer)
+        public = root / 'frontend/public/documents'
+        public.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(out / filename, public / filename)
         print(filename)
+    shutil.copyfile(root / 'evaluation/corpus.json', root / 'frontend/public/corpus.json')
 
 
 if __name__ == '__main__':
